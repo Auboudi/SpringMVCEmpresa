@@ -3,8 +3,6 @@ package com.example.entities;
 import java.io.Serializable;
 import java.util.List;
 
-import org.aspectj.lang.reflect.PerClauseKind;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
