@@ -22,5 +22,9 @@
             <li th:each=" correo : ${correos}" th:text="${correo}"></li>
         </ul>
     </div>
+
+    <div>
+        <a th:href="@{/listar}">Volver</a>
+    </div>
 </body>
 </html>
