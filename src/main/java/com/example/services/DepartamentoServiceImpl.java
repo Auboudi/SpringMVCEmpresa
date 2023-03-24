@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.dao.DepartamentoDao;
 import com.example.entities.Departamento;
@@ -26,11 +27,13 @@ public class DepartamentoServiceImpl implements DepartamentoService {
     }
 
     @Override
+    @Transactional
     public void save(Departamento departamento) {
         departamentoDao.save(departamento);
     }
 
     @Override
+    @Transactional
     public void deleteById(int idDepartamento) {
         departamentoDao.deleteById(idDepartamento);;
     }
