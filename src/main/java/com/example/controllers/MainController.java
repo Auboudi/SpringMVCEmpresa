@@ -170,4 +170,12 @@ public class MainController {
 
             return "views/formularioAltaEmpleado";
         }
+
+        @GetMapping("/borrar/{id}")
+        public String borrarEmpleado(@PathVariable(name = "id") int idEmpleado) {
+            empleadoService.delete(empleadoService.findById(idEmpleado));
+
+            return "redirect:/listar";
+        }
+
 }
