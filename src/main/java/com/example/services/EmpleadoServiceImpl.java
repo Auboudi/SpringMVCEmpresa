@@ -35,13 +35,13 @@ public class EmpleadoServiceImpl implements EmpleadoService {
     @Override
     @Transactional
     public void deleteById(int idEmpleado) {
-        empleadoDao.deleteById(idEmpleado);;
+        empleadoDao.deleteById(idEmpleado);
     }
 
     @Override
     @Transactional
     public void delete(Empleado empleado) {
-        empleadoDao.delete(empleado);;
+        empleadoDao.delete(empleado);
     }
     
 }

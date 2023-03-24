@@ -178,4 +178,25 @@ public class MainController {
             return "redirect:/listar";
         }
 
+        @GetMapping("/detalles/{id}")
+        public String empleadoDetails(@PathVariable(name = "id") int id, Model model) {
+
+            Empleado empleado = empleadoService.findById(id);
+            List<Telefono> telefonos = telefonoService.findByEmpleado(empleado);
+            List<Correo> correos = correoService.findByEmpleado(empleado);
+
+            List<String> numerosTelefono = telefonos.stream()
+                .map(t -> t.getNumero())
+                .toList();
+            List<String> emailsCorreo = correos.stream()
+                .map(c -> c.getEmail())
+                .toList();
+
+                model.addAttribute("empleado", empleado);
+                model.addAttribute("telefonos", numerosTelefono);
+                model.addAttribute("correos", emailsCorreo);
+
+            return "views/empleadoDetalles";
+        }
+
 }
